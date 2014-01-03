@@ -1,0 +1,55 @@
+#_form.html.erb
+<%= form_for(@item) do |f| %>
+  <% if @item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
+
+      <ul>
+      <% @item.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :facilityName %><br>
+    <%= f.text_field :facilityName %>
+  </div>
+  <div class="field">
+    <%= f.label :dairy %><br>
+    <%= f.check_box :dairy %>
+  </div>
+  <div class="field">
+    <%= f.label :fish %><br>
+    <%= f.check_box :fish %>
+  </div>
+  <div class="field">
+    <%= f.label :peanuts %><br>
+    <%= f.check_box :peanuts %>
+  </div>
+  <div class="field">
+    <%= f.label :tree_Nuts %><br>
+    <%= f.check_box :tree_Nuts %>
+  </div>
+  <div class="field">
+    <%= f.label :eggs %><br>
+    <%= f.check_box :eggs %>
+  </div>
+  <div class="field">
+    <%= f.label :wheat_gluten %><br>
+    <%= f.check_box :wheat_gluten %>
+  </div>
+  <div class="field">
+    <%= f.label :soy %><br>
+    <%= f.check_box :soy %>
+  </div>
+  <div class="field">
+    <%= f.label :crusta %><br>
+    <%= f.check_box :crusta %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
