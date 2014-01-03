@@ -1,0 +1,56 @@
+#show.html.erb
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Facility_Name:</strong>
+  <%= @facility.facilityName %>
+</p>
+
+<p>
+  <strong>Facility_id:</strong>
+  <%= @facility.facility_id %>
+</p>
+<p>
+  <strong>Dairy:</strong>
+  <%= @facility.dairy %>
+</p>
+
+<p>
+  <strong>Fish:</strong>
+  <%= @facility.fish %>
+</p>
+
+<p>
+  <strong>Peanuts:</strong>
+  <%= @facility.peanuts %>
+</p>
+
+<p>
+  <strong>Tree nuts:</strong>
+  <%= @facility.tree_Nuts %>
+</p>
+
+<p>
+  <strong>Eggs:</strong>
+  <%= @facility.eggs %>
+</p>
+
+<p>
+  <strong>Wheat gluten:</strong>
+  <%= @facility.wheat_gluten %>
+</p>
+
+<p>
+  <strong>Soy:</strong>
+  <%= @facility.soy %>
+</p>
+
+<p>
+  <strong>Crusta:</strong>
+  <%= @facility.crusta %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_item_path(@facility) %> |
+<%= link_to 'Back', facilities_path %>

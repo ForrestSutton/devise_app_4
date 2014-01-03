@@ -1,28 +1,35 @@
 class FacilitiesController < ApplicationController
-  def new
-  	 @facility = Facility.new
-  end
+  #before_action :set_facility, only: [:show, :edit, :update, :destroy]
 
   def index
   	@facilities = Facility.all
   end
 
-  def create
-  	@facility = Facility.new(params[:facility].permit(:facilityName, :dairy, :fish, :peanuts, :tree_Nuts, :eggs,  :wheat_gluten,  :soy, :crusta))
-  end
-
   def show
-    @facility = Facility.find(params[:id])  	
+    @facility = Facility.find(params[:id])   
   end
 
+  def new
+     @facility = Facility.new
+  end
+  
   def edit
-  	@facility = Facility.find(params[:id])
+    @facility = Facility.find(params[:id])
+  end
+
+  def create
+    @facility = Facility.new(facility_params)
+  	if @facility.save
+      redirect_to @facility
+    else
+      render action: 'new'
+    end
   end
 
   def update
   	@facility = Facility.find(params[:id])
 
-  	if @facility.update(params[:facility].permit(:facilityName, :dairy, :fish, :peanuts, :tree_Nuts, :eggs,  :wheat_gluten,  :soy, :crusta))
+  	if @facility.update(facility_params)   
   		redirect_to @facility
   	else
   		render 'edit'
@@ -44,6 +51,6 @@ class FacilitiesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def facility_params
-      params.require(:facility).permit(:facilityName, :dairy, :fish, :peanuts, :tree_Nuts, :eggs,  :wheat_gluten,  :soy, :crusta)
+      params.require(:facility).permit(:facilityName, :facility_id, :dairy, :fish, :peanuts, :tree_Nuts, :eggs,  :wheat_gluten,  :soy, :crusta)
     end
 end

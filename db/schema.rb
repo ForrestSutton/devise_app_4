@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140103000740) do
+ActiveRecord::Schema.define(version: 20140103164532) do
 
   create_table "facilities", force: true do |t|
     t.string   "facilityName"
@@ -29,6 +29,21 @@ ActiveRecord::Schema.define(version: 20140103000740) do
   end
 
   add_index "facilities", ["facility_id"], name: "index_facilities_on_facility_id"
+
+  create_table "items", force: true do |t|
+    t.integer  "facility_id"
+    t.boolean  "dairy"
+    t.boolean  "fish"
+    t.boolean  "peanuts"
+    t.boolean  "tree_Nuts"
+    t.boolean  "eggs"
+    t.boolean  "wheat_gluten"
+    t.boolean  "soy"
+    t.boolean  "crusta"
+    t.string   "same_Line"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
