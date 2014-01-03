@@ -1,11 +1,10 @@
-#_form.html.erb
-<%= form_for(@facility) do |f| %>
-  <% if @facility.errors.any? %>
+<%= form_for(@item) do |f| %>
+  <% if @item.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@facility.errors.count, "error") %> prohibited this facility from being saved:</h2>
+      <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
 
       <ul>
-      <% @facility.errors.full_messages.each do |msg| %>
+      <% @item.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>
@@ -13,42 +12,45 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :facilityName %><br>
-    <%= f.text_field :facilityName %>
+    <%= f.label :facility_id %><br>
+    <%= f.text_field :facility_id %>
   </div>
   <div class="field">
     <%= f.label :dairy %><br>
-    <%= f.check_box :dairy %>
+    <%= f.text_field :dairy %>
   </div>
   <div class="field">
     <%= f.label :fish %><br>
-    <%= f.check_box :fish %>
+    <%= f.text_field :fish %>
   </div>
   <div class="field">
     <%= f.label :peanuts %><br>
-    <%= f.check_box :peanuts %>
+    <%= f.text_field :peanuts %>
   </div>
   <div class="field">
     <%= f.label :tree_Nuts %><br>
-    <%= f.check_box :tree_Nuts %>
+    <%= f.text_field :tree_Nuts %>
   </div>
   <div class="field">
     <%= f.label :eggs %><br>
-    <%= f.check_box :eggs %>
+    <%= f.text_field :eggs %>
   </div>
   <div class="field">
     <%= f.label :wheat_gluten %><br>
-    <%= f.check_box :wheat_gluten %>
+    <%= f.text_field :wheat_gluten %>
   </div>
   <div class="field">
     <%= f.label :soy %><br>
-    <%= f.check_box :soy %>
+    <%= f.text_field :soy %>
   </div>
   <div class="field">
     <%= f.label :crusta %><br>
-    <%= f.check_box :crusta %>
+    <%= f.text_field :crusta %>
   </div>
-
+  <div class="field">
+    <%= f.label :same_Line %><br>
+    <%= f.text_field :same_Line %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

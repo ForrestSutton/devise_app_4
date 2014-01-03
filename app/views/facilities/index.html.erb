@@ -15,15 +15,21 @@
   </thead>
 
   <tbody>
-    <% @items.each do |item| %>
+    <% @facilities.each do |facility| %>
       <tr>
-        <td><%= item.code %></td>
-        <td><%= item.productName %></td>
-        <td><%= item.facility %></td>
-        <td><%= item.nuts %></td>
-        <td><%= link_to 'Show', item %></td>
-        <td><%= link_to 'Edit', edit_item_path(item) %></td>
-        <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= facility.facilityName %></td>
+        <td><%= facility.facility_id %></td>
+        <td><%= facility.dairy %></td>
+        <td><%= facility.fish %></td>
+        <td><%= facility.peanuts %></td>
+        <td><%= facility.tree_Nuts %></td>
+        <td><%= facility.eggs %></td>
+        <td><%= facility.wheat_gluten %></td>
+        <td><%= facility.soy %></td>
+        <td><%= facility.crusta %></td>
+        <td><%= link_to 'Show', facility %></td>
+        <td><%= link_to 'Edit', edit_facility_path(facility) %></td>
+        <td><%= link_to 'Destroy', facility, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -31,4 +37,4 @@
 
 <br>
 
-<%= link_to 'New Item', new_item_path %>
+<%= link_to 'New Facility', new_facility_path %>
