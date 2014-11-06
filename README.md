@@ -12,7 +12,7 @@ omniauth
 simple_form
 
 #todo
--[]  things todo 
+-[ ]  things todo 
 -[x] things done
 
 
